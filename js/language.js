@@ -46,7 +46,7 @@ const translations = {
 
         // 页脚部分
         'copyright': '© 2024 Othello Five. All rights reserved.',
-        'contact-us': 'Contact Us'
+        'contact-us': 'Contact Us：ytsgabcde001@2925.com'
     },
     // 中文翻译
     zh: {
@@ -142,7 +142,7 @@ const translations = {
 
         // 页脚部分
         'copyright': '© 2024 Othello Five. 全権利所有。',
-        'contact-us': 'お問い合わせ'
+        'contact-us': 'お問い合わせ：ytsgabcde001@2925.com'
     },
     // 韩文翻译
     ko: {
@@ -190,7 +190,7 @@ const translations = {
 
         // 页脚部分
         'copyright': '© 2024 Othello Five. 모든 권리 보유.',
-        'contact-us': '문의하기'
+        'contact-us': '문의하기：ytsgabcde001@2925.com'
     },
     // 西班牙语翻译
     es: {
@@ -238,7 +238,7 @@ const translations = {
 
         // 页脚部分
         'copyright': '© 2024 Othello Five. Todos los derechos reservados.',
-        'contact-us': 'Contáctanos'
+        'contact-us': 'Contáctanos：ytsgabcde001@2925.com'
     }
 };
 
