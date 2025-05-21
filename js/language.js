@@ -94,7 +94,7 @@ const translations = {
 
         // 页脚部分
         'copyright': '© 2024 Othello Five. 保留所有权利。',
-        'contact-us': '联系我们'
+        'contact-us': '联系我们：ytsgabcde001@2925.com'
     },
     // 日文翻译
     ja: {
