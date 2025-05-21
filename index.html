@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBC18L21ZE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MBC18L21ZE');
+    </script>
+
+    <!-- 设置文档字符编码为UTF-8，确保正确显示各种语言字符 -->
+    <meta charset="UTF-8">
+    <!-- 设置视口，使网站在移动设备上正确缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO元标签，用于搜索引擎优化 -->
+    <title>Othello Five 🕹 - Free Online Board Games | Play Classic Strategy Games</title>
+    <!-- 网站描述，用于搜索引擎结果展示 -->
+    <meta name="description" content="Othello Five 🕹 offers free online board games featuring classic strategy challenges. Enjoy the timeless Othello experience with stunning graphics, multiplayer options, and easy controls. Perfect for strategy lovers of all ages. Play now on any device!">
+    <!-- 规范链接，告诉搜索引擎这是网站的主要URL -->
+    <link rel="canonical" href="https://qdyingpai.com">
+
+    <!-- 网站图标设置 -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- 引入CSS样式文件 - 添加随机参数强制浏览器重新加载最新样式 -->
+    <link rel="stylesheet" href="css/styles.css?v=20240517093000">
+    <!-- 引入响应式设计样式文件，确保在不同设备上正常显示 -->
+    <link rel="stylesheet" href="css/responsive.css?v=20240517093000">
+
+    <!-- 引入Google字体 - Press Start 2P，用于复古游戏风格的标题 -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- 添加新的样式，用于新的布局结构 -->
+    <style>
+        /* 游戏区域容器样式 */
+        .games-area-container {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 游戏信息区域全宽样式 */
+        .game-info-fullwidth {
+            width: 100%;
+            background-color: var(--bg-section-green);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px var(--shadow-color-general);
+            margin-top: 1rem;
+        }
+
+        /* 覆盖原有的 main 网格布局，改为正常流布局 */
+        main {
+            display: block !important;
+            padding: 1rem;
+        }
+
+        /* 修改 .main-game 的样式，使其适应新的布局 */
+        .main-game {
+            grid-area: unset;
+            width: 100%;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 992px) {
+            .games-area-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+
+            .left-games, .right-games {
+                height: 300px;
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面顶部区域 -->
+    <header>
+        <!-- 网站Logo容器 -->
+        <div class="logo-container">
+            <!-- 使用h1标签包裹网站名称，提高SEO权重 -->
+            <h1 class="retro-logo">gamepix.com</h1>
+        </div>
+        <!-- 多语言选择器，允许用户切换网站语言 -->
+        <div class="language-selector">
+            <!-- 英文按钮，默认激活 -->
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <!-- 中文按钮 -->
+            <button class="lang-btn" data-lang="zh">中文</button>
+            <!-- 日文按钮 -->
+            <button class="lang-btn" data-lang="ja">日本語</button>
+            <!-- 韩文按钮 -->
+            <button class="lang-btn" data-lang="ko">한국어</button>
+            <!-- 西班牙语按钮 -->
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+    </header>
+
+    <!-- 页面主体内容区域 -->
+    <main>
+        <!-- 新增的顶部游戏列表区域 -->
+        <div class="game-list top-games">
+            <!-- 游戏项开始 -->
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/slice-master">
+                <div class="game-cover">
+                    <img src="images/games/Slice Master.jpg" alt="Slice Master Game">
+                    <div class="game-title">Slice Master</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/street-life">
+                <div class="game-cover">
+                    <img src="images/games/Street Life.jpg" alt="Street Life Game">
+                    <div class="game-title">Street Life</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/stick-war">
+                <div class="game-cover">
+                    <img src="images/games/Stick War.jpg" alt="Stick War Game">
+                    <div class="game-title">Stick War</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                <div class="game-cover">
+                    <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                    <div class="game-title">Sniper Challenge</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                <div class="game-cover">
+                    <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                    <div class="game-title">Find the Vampire</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                <div class="game-cover">
+                    <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                    <div class="game-title">Super Slime</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                <div class="game-cover">
+                    <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                    <div class="game-title">Mad Royale Tactics</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                <div class="game-cover">
+                    <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                    <div class="game-title">Tile Jumper 3D</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                <div class="game-cover">
+                    <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                    <div class="game-title">Puzzle Survivor</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mini-game" data-src="https://www.crazygames.com/embed/twisted-tangle-nmt">
+                <div class="game-cover">
+                    <img src="images/games/Twisted Tangle.jpg" alt="Twisted Tangle Game">
+                    <div class="game-title">Twisted Tangle</div>
+                    <div class="play-button-container">
+                        <button class="play-button">Play Now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 游戏项结束 -->
+        </div>
+
+        <!-- 游戏区域容器 - 包含左侧游戏列表、中间游戏和右侧游戏列表 -->
+        <div class="games-area-container">
+            <!-- 左侧游戏列表区域 -->
+            <div class="game-list left-games">
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/k-sniper-challenge-3d">
+                    <div class="game-cover">
+                        <img src="images/games/Sniper Challenge.jpg" alt="Sniper Challenge Game">
+                        <div class="game-title">Sniper Challenge</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/find-the-vampire">
+                    <div class="game-cover">
+                        <img src="images/games/Find the Vampire.jpg" alt="Find the Vampire Game">
+                        <div class="game-title">Find the Vampire</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/super-slime-mqf">
+                    <div class="game-cover">
+                        <img src="images/games/Super Slime.jpg" alt="Super Slime Game">
+                        <div class="game-title">Super Slime</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/mad-royale-tactics">
+                    <div class="game-cover">
+                        <img src="images/games/Mad Royale Tactics.jpg" alt="Mad Royale Tactics Game">
+                        <div class="game-title">Mad Royale Tactics</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/tile-jumper-3d">
+                    <div class="game-cover">
+                        <img src="images/games/Tile Jumper 3D.jpg" alt="Tile Jumper 3D Game">
+                        <div class="game-title">Tile Jumper 3D</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="mini-game" data-src="https://www.crazygames.com/embed/puzzle-survivor">
+                    <div class="game-cover">
+                        <img src="images/games/Puzzle Survivor.jpg" alt="Puzzle Survivor Game">
+                        <div class="game-title">Puzzle Survivor</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/twisted-tangle-nmt">
+                    <div class="game-cover">
+                        <img src="images/games/Twisted Tangle.jpg" alt="Twisted Tangle Game">
+                        <div class="game-title">Twisted Tangle</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- 中间主区域 - 只包含游戏iframe部分 -->
+            <section class="main-game">
+                <!-- 游戏容器，包含iframe嵌入的游戏和全屏按钮 -->
+                <div class="game-container">
+                    <!-- 使用iframe嵌入外部游戏，设置ID便于JavaScript操作 -->
+                    <iframe id="mainGameFrame" src="https://www.gamepix.com/it/play/othello-five" frameborder="0" allow="gamepad *;"></iframe>
+                    <!-- 全屏按钮，点击后可将游戏全屏显示 -->
+                    <button id="fullscreenBtn" class="fullscreen-btn">Fullscreen</button>
+                </div>
+            </section>
+
+            <!-- 右侧游戏列表区域 -->
+            <div class="game-list right-games">
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/dig-tycoon---idle-game-3d">
+                    <div class="game-cover">
+                        <img src="images/games/Dig Tycoon.jpg" alt="Dig Tycoon Game">
+                        <div class="game-title">Dig Tycoon</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.twoplayergames.org/embed/volley-beans">
+                    <div class="game-cover">
+                        <img src="images/games/Volley Beans.jpg" alt="Volley Beans Game">
+                        <div class="game-title">Volley Beans</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/8-ball-billiards-classic">
+                    <div class="game-cover">
+                        <img src="images/games/8 Ball BilliardsClassic.jpg" alt="8 Ball Billiards Game">
+                        <div class="game-title">8 Ball Billiards</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/street-life">
+                    <div class="game-cover">
+                        <img src="images/games/Street Life.jpg" alt="Street Life Game">
+                        <div class="game-title">Street Life</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mini-game" data-src="https://www.crazygames.com/embed/stick-war">
+                    <div class="game-cover">
+                        <img src="images/games/Stick War.jpg" alt="Stick War Game">
+                        <div class="game-title">Stick War</div>
+                        <div class="play-button-container">
+                            <button class="play-button">Play Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏信息区域 - 宽度撑满屏幕 -->
+        <div class="game-info-fullwidth">
+            <div class="game-info">
+                <!-- 游戏标题 -->
+                <h2>Othello Five</h2>
+
+                <!-- 游戏截图展示区域，使用flex布局横向排列 -->
+                <div class="game-screenshots">
+                    <img src="images/1.jpg" alt="Game Screenshot 1">
+                    <img src="images/2.jpg" alt="Game Screenshot 2">
+                    <img src="images/3.jpg" alt="Game Screenshot 3">
+                </div>
+
+                <!-- 游戏特点列表 -->
+                <div class="game-features">
+                    <h3>Game Features</h3>
+                    <ul>
+                        <li>Classic Othello/Reversi strategy gameplay with a modern twist</li>
+                        <li>Sleek and intuitive user interface for smooth gameplay</li>
+                        <li>Multiple difficulty levels suitable for beginners and experts</li>
+                        <li>Single-player mode against intelligent AI opponents</li>
+                        <li>Beautiful board design with clear visual feedback</li>
+                        <li>Strategic depth that's easy to learn but challenging to master</li>
+                    </ul>
+                </div>
+
+                <!-- 游戏描述文本 -->
+                <div class="game-description">
+                    <h3>About the Game</h3>
+                    <p>Othello Five brings the classic board game strategy to life with modern graphics and engaging gameplay. This timeless game of strategy challenges players to outthink their opponents by strategically placing pieces to flip and capture their opponent's discs. With its perfect balance of simplicity and depth, Othello Five offers endless entertainment for strategy enthusiasts of all skill levels.</p>
+                </div>
+
+                <!-- 游戏操作指南 -->
+                <div class="how-to-play">
+                    <h3>How to Play</h3>
+                    <p>Click on valid spaces to place your disc. A valid move must capture at least one of your opponent's discs by flanking them between your newly placed disc and another of your discs already on the board. The game ends when the board is full or when neither player can make a valid move.</p>
+                    <ul>
+                        <li>Mouse Click: Place your disc on a valid space</li>
+                        <li>Valid Moves: Highlighted spaces show where you can place your disc</li>
+                        <li>Capturing: Place discs to trap opponent pieces between yours</li>
+                        <li>Winning: Have the most discs of your color when the game ends</li>
+                    </ul>
+                </div>
+
+                <!-- 游戏技巧提示 -->
+                <div class="game-tips">
+                    <h3>Pro Tips</h3>
+                    <ul>
+                        <li>Control the corners and edges of the board whenever possible</li>
+                        <li>Think several moves ahead to set up strategic traps for your opponent</li>
+                        <li>Sometimes making a move that flips fewer discs can be more strategic</li>
+                        <li>Focus on board position in early game rather than maximizing captures</li>
+                    </ul>
+                </div>
+
+                <!-- 玩家评论区域 -->
+                <div class="player-reviews">
+                    <h3>What Players Love</h3>
+                    <div class="review">
+                        <p>"Perfect implementation of the classic Othello game. Clean interface and challenging AI!"</p>
+                        <span>- John D.</span>
+                    </div>
+                    <div class="review">
+                        <p>"Best Othello game I've played online. The strategy depth is incredible!"</p>
+                        <span>- Sarah M.</span>
+                    </div>
+                    <div class="review">
+                        <p>"I love how it highlights valid moves. Makes learning the game so much easier!"</p>
+                        <span>- Mike R.</span>
+                    </div>
+                    <div class="review">
+                        <p>"The AI provides just the right challenge for improving my strategy skills!"</p>
+                        <span>- Lisa K.</span>
+                    </div>
+                </div>
+
+                <!-- 网站优势介绍区域 -->
+                <div class="why-section">
+                    <h3>Why Choose GoKarts.io?</h3>
+                    <div class="why-content">
+                        <div class="why-item">
+                            <h4>🎮 Ultimate Racing Experience</h4>
+                            <p>GoKarts.io delivers an unparalleled racing experience with its cutting-edge physics engine and stunning 3D graphics. Every turn, drift, and acceleration feels incredibly realistic, making each race an adrenaline-pumping adventure.</p>
+                        </div>
+                        <div class="why-item">
+                            <h4>🏆 Competitive Multiplayer</h4>
+                            <p>Join thousands of players worldwide in intense multiplayer races. Our advanced matchmaking system ensures you're always racing against opponents of similar skill level, making every race challenging and exciting.</p>
+                        </div>
+                        <div class="why-item">
+                            <h4>🚗 Extensive Customization</h4>
+                            <p>Express your style with our comprehensive vehicle customization system. From performance upgrades to visual modifications, create your perfect racing machine that stands out on the track.</p>
+                        </div>
+                        <div class="why-item">
+                            <h4>🌍 Global Community</h4>
+                            <p>Be part of a thriving community of racing enthusiasts. Share strategies, compete in tournaments, and make friends with players from around the world who share your passion for racing games.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 游戏更新信息 -->
+                <div class="game-updates">
+                    <h3>Latest Updates</h3>
+                    <ul>
+                        <li>New AI difficulty level: Expert Mode</li>
+                        <li>Added game statistics tracking</li>
+                        <li>Improved move highlighting system</li>
+                        <li>Enhanced board animations and visual feedback</li>
+                    </ul>
+                </div>
+
+                <!-- 常见问题解答区域 -->
+                <div class="faq">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="faq-item">
+                        <h4>Is this game free to play?</h4>
+                        <p>Yes, all games on our platform are completely free!</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>Can I play with friends?</h4>
+                        <p>Yes, you can invite friends to play together in multiplayer mode.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>What are the system requirements?</h4>
+                        <p>The game runs smoothly on most modern browsers. We recommend using Chrome or Firefox for the best experience.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>How do I save my progress?</h4>
+                        <p>Your progress is automatically saved when you're logged in. Make sure to create an account to keep track of your achievements.</p>
+                    </div>
+                </div>
+            </div> <!-- game-info 结束 -->
+        </div> <!-- game-info-fullwidth 结束 -->
+    </main>
+
+    <!-- 页面底部区域 -->
+    <footer>
+        <div class="footer-content">
+            <!-- 版权信息和联系方式 -->
+            <div class="copyright">
+                <!-- ICP备案号链接 -->
+                <p><a href="https://beian.miit.gov.cn" rel="nofollow">渝ICP备2025051720号-61</a></p>
+                <!-- 联系邮箱 -->
+                <p>Contact Us: ytsgabcde001@2925.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入JavaScript文件 -->
+    <!-- 主要功能脚本，处理游戏切换、全屏等功能 -->
+    <script src="js/main.js"></script>
+    <!-- 多语言切换功能脚本 -->
+    <script src="js/language.js"></script>
+
+    <!-- 添加测试脚本，强制应用布局 -->
+    <script src="test.js?v=20240517093500"></script>
+</body>
+</html>

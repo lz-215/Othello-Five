@@ -1,0 +1,260 @@
+/* 响应式设计额外样式 - 确保网站在不同屏幕尺寸下都能良好显示 */
+
+/* 大屏幕样式 (1400px及以上) - 针对大显示器和高分辨率设备优化布局 */
+@media (min-width: 1400px) {
+    main {
+        grid-template-columns: 3.5fr 1fr 3.5fr; /* 保持与主样式文件一致，两侧区域更宽，中间更窄 */
+    }
+    
+    .game-container {
+        height: 700px; /* 增加游戏容器高度，充分利用大屏幕空间 */
+    }
+    
+    .retro-logo {
+        font-size: 2.5rem; /* 增加Logo字体大小，在大屏幕上更加醒目 */
+    }
+    
+    .game-info-fullwidth {
+        max-width: 2000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* 中等屏幕样式 (992px到1199px) - 针对普通笔记本电脑和小型显示器调整布局 */
+@media (max-width: 1199px) {
+    main {
+        grid-template-columns: 3fr 1fr 3fr; /* 保持同样的比例关系，只是略微调整 */
+    }
+    
+    .games-area-container {
+        grid-template-columns: 1fr 3fr 1fr; /* 缩小两侧列宽比例 */
+    }
+    
+    .game-container {
+        height: 500px; /* 减小游戏容器高度，适应中等屏幕 */
+    }
+    
+    .why-content {
+        grid-template-columns: repeat(2, 1fr); /* 将功能区调整为两列 */
+    }
+}
+
+/* 小屏幕样式 (768px到991px) - 针对平板设备调整布局 */
+@media (max-width: 991px) {
+    main {
+        grid-template-columns: 1fr; /* 较小屏幕布局调整：单列 */
+        grid-template-areas:
+            "top"
+            "main-content"
+            "left"
+            "right"
+            "bottom";
+    }
+    
+    .games-area-container {
+        grid-template-columns: 1fr; /* 调整为单列布局 */
+        grid-template-rows: auto auto auto;
+    }
+    
+    .left-games, .right-games {
+        height: 400px; /* 与小屏幕下的game-container高度一致 */
+        overflow-y: auto;
+    }
+    
+    .game-links, .mini-games {
+        position: fixed; /* 将侧边栏改为固定定位，实现侧滑菜单效果 */
+        top: 0; /* 定位到顶部 */
+        height: 100vh; /* 设置高度为视口高度，覆盖整个屏幕 */
+        z-index: 1000; /* 设置较高层级，确保显示在其他内容之上 */
+        transform: translateX(-100%); /* 默认隐藏在屏幕左侧 */
+        transition: transform 0.3s ease-in-out; /* 添加平滑过渡效果 */
+    }
+    
+    .game-links.active, .mini-games.active {
+        transform: translateX(0); /* 激活状态时显示侧边栏 */
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1001;
+        background-color: var(--theme-primary);
+        color: var(--theme-text-light);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .right-menu-btn {
+        left: auto;
+        right: 1rem;
+    }
+    
+    .left-games, .right-games {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        max-width: 300px;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: none;
+    }
+    
+    .left-games {
+        left: 0;
+    }
+    
+    .right-games {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+    }
+    
+    .left-games.active, .right-games.active {
+        transform: translateX(0);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    .menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .menu-backdrop.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* 超小屏幕样式 (576px及以下) - 针对手机设备优化布局和交互 */
+@media (max-width: 576px) {
+    header {
+        padding: 0.8rem;
+    }
+    
+    .retro-logo {
+        font-size: 1.5rem; /* 减小Logo字体大小，适应小屏幕 */
+    }
+    
+    .language-selector {
+        flex-wrap: wrap; /* 允许语言选择器按钮换行 */
+        justify-content: center; /* 居中对齐按钮 */
+    }
+    
+    .lang-btn {
+        font-size: 0.8rem; /* 减小按钮字体大小 */
+        padding: 0.3rem 0.6rem; /* 减小按钮内边距 */
+    }
+    
+    .game-container {
+        height: 300px; /* 减小游戏容器高度，适应手机屏幕 */
+    }
+    
+    .left-games, .right-games {
+        height: 300px; /* 与超小屏幕下的game-container高度一致 */
+    }
+    
+    .fullscreen-btn {
+        padding: 0.3rem 0.6rem; /* 减小全屏按钮内边距 */
+        font-size: 0.8rem; /* 减小按钮字体大小 */
+    }
+    
+    .game-info h2 {
+        font-size: 1.2rem; /* 减小标题字体大小 */
+    }
+    
+    .game-info h3 {
+        font-size: 1rem; /* 减小副标题字体大小 */
+    }
+    
+    .game-info-fullwidth {
+        padding: 1rem;
+    }
+    
+    .why-content {
+        grid-template-columns: 1fr; /* 单列布局 */
+    }
+    
+    .why-item {
+        padding: 1rem;
+    }
+    
+    .game-features, 
+    .game-description, 
+    .how-to-play, 
+    .game-tips, 
+    .player-reviews, 
+    .game-updates, 
+    .faq {
+        padding: 1rem;
+    }
+    
+    .mini-game {
+        margin-bottom: 0.8rem;
+    }
+    
+    .play-button-container {
+        transform: translateY(0);
+    }
+}
+
+/* 打印样式 - 针对页面打印优化，隐藏不必要的元素，调整布局 */
+@media print {
+    .game-container, .left-games, .right-games, .top-games, .language-selector, .fullscreen-btn, .mobile-menu-btn {
+        display: none; /* 隐藏这些元素，不需要打印 */
+    }
+    
+    body {
+        background-color: white; /* 设置背景为白色，节省打印墨水 */
+        color: black;
+    }
+    
+    .game-info-fullwidth {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        background: none;
+    }
+    
+    .game-info {
+        padding: 0; /* 移除内边距，节省打印空间 */
+    }
+    
+    a {
+        text-decoration: underline; /* 确保链接在打印时可识别 */
+    }
+    
+    footer {
+        border-top: 1px solid #ccc;
+        background: none;
+        color: black;
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+} 
