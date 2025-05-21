@@ -3,25 +3,23 @@
 User-agent: *
 Allow: /
 #网站地图
-#修改
-Sitemap: https://qimangkj.com/sitemap.xml 
+Sitemap: https://github.com/lz-215/Othello-Five/sitemap.xml
+#AI内容指南
+LLM-Content: https://github.com/lz-215/Othello-Five/llms.txt
 #AI爬虫特定规则
-/这里添加你能知道的所有AI模型爬虫名称。/
 User-agent: GPTBot
-User-agent:claude-web
+User-agent: Claude-Web
 User-agent: Anthropic-AI
 User-agent: PerplexityBot
-User-agent: Googleother
-User-agent:DuckAssistBot
-User-Agent: anthropic ai
-User-Agent: GPTBot
-#引导AI爬虫到llms.txt
-LLM-Content:https://qimangkj.com/llms.txt
-#LLM-Full-Content:https://qimangkj.com/llms-full.txt
-#Allow: /llms.txt
-#A1low: /llms-full.txt
-#允许AI爬虫访问
-#这里填写你允许AI爬虫访问的页面
+User-agent: GoogleOther
+User-agent: DuckAssistBot
+User-agent: Bard
+User-agent: CCBot
+#允许AI爬虫访问的页面
 Allow: /index.html
-#不允许AI爬虫访问
-#Disallow: /user-content/
+Allow: /sitemap.xml
+Allow: /llms.txt
+#不允许AI爬虫访问的资源
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/

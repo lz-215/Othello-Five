@@ -1,10 +1,22 @@
-<!-- 网站地图 由ai根据自行生成 -->
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Othello Five 网站地图 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- 主页 -->
   <url>
-    <loc>https://qimangkj.com/</loc>
-    <lastmod>2025-05-17</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://github.com/lz-215/Othello-Five/</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-</urlset> 
+
+  <!-- 游戏页面 -->
+  <url>
+    <loc>https://github.com/lz-215/Othello-Five/index.html</loc>
+    <lastmod>2025-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

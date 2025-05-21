@@ -1,0 +1,52 @@
+# Othello Five 项目部署说明
+
+要将此项目部署到 GitHub 仓库 https://github.com/lz-215/Othello-Five.git，请按照以下步骤操作：
+
+## 前提条件
+1. 确保您的计算机上已安装 Git
+2. 确保您已经登录到 GitHub 账户
+
+## 部署步骤
+
+1. 打开命令提示符或 PowerShell
+2. 导航到项目目录：
+   ```
+   cd "C:\Users\Administrator\Desktop\游戏类\游戏类\游戏类网站编写模板4"
+   ```
+
+3. 初始化 Git 仓库（如果尚未初始化）：
+   ```
+   git init
+   ```
+
+4. 添加所有文件到暂存区：
+   ```
+   git add .
+   ```
+
+5. 提交更改：
+   ```
+   git commit -m "Initial commit for Othello Five"
+   ```
+
+6. 添加远程仓库：
+   ```
+   git remote add origin https://github.com/lz-215/Othello-Five.git
+   ```
+
+7. 推送到 GitHub：
+   ```
+   git push -u origin master
+   ```
+
+8. 如果提示输入用户名和密码，请输入您的 GitHub 凭据。
+   注意：如果您启用了双因素认证，需要使用个人访问令牌而不是密码。
+
+## 验证部署
+部署完成后，您可以访问 https://github.com/lz-215/Othello-Five 查看您的项目是否已成功上传。
+
+## 问题排查
+如果在推送过程中遇到问题，可能是因为：
+1. 远程仓库已存在 - 使用 `git remote remove origin` 删除现有远程仓库，然后重新添加
+2. 身份验证失败 - 确保使用正确的用户名和密码/访问令牌
+3. 网络问题 - 检查您的网络连接并重试
